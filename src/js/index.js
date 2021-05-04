@@ -9,7 +9,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../styles/index.scss";
 
 //import your own components
-import Layout from "./layout";
+import { InputToDo } from "./component/InputToDo.js";
+import injectContext from "./store/appContext";
 
 //render your react application
-ReactDOM.render(<Layout />, document.querySelector("#app"));
+const TodoList = injectContext(InputToDo);
+ReactDOM.render(<TodoList />, document.querySelector("#app"));
